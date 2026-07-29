@@ -3,17 +3,17 @@
 namespace CompCube_Models.Models.ClientData;
 
 [method: JsonConstructor]
-public class UserInfo(string username, int userId, int mmr, Badge? badge, long rank, string? discordId, bool banned, int wins, int totalGames, int winstreak, int highestWinstreak)
+public class UserInfo(string username, string userId, int mmr, Badge? badge, long rank, string? discordId, bool banned, int wins, int totalGames, int winstreak, int highestWinstreak)
 {
     [JsonProperty("username")]
     public string Username { get; private set; } = username;
 
     [JsonProperty("userId")]
-    public int UserId { get; private set; } = userId;
+    public string UserId { get; private set; } = userId;
 
     // change to beatleader later
     [JsonProperty("profilePictureLink")]
-    public string ProfilePictureLink { get; private set; } = "https://cdn.scoresaber.com/avatars/" + (userId.ToString().Length == 17 ? $"{userId}.jpg" : "oculus.png");
+    public string ProfilePictureLink { get; private set; } = "https://cdn.scoresaber.com/avatars/" + (userId.Length == 17 ? $"{userId}.jpg" : "oculus.png");
 
     [JsonProperty("mmr")]
     public int Mmr { get; private set; } = mmr;
