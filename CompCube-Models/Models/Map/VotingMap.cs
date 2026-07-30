@@ -44,7 +44,11 @@ public class VotingMap(
 
     public enum Category
     {
-        Unknown
+        Accuracy,
+        MidSpeed,
+        Tech,
+        Speed,
+        Extreme
     }
     
     public enum DifficultyType
