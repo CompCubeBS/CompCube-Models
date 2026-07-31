@@ -48,7 +48,8 @@ public class VotingMap(
         MidSpeed,
         Tech,
         Speed,
-        Extreme
+        Extreme,
+        Special
     }
     
     public enum DifficultyType
