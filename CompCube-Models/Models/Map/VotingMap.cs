@@ -6,8 +6,7 @@ namespace CompCube_Models.Models.Map;
 public class VotingMap(
     string hash,
     VotingMap.DifficultyType difficulty,
-    VotingMap.Category category,
-    string categoryLabel)
+    VotingMap.Category category)
 {
     protected bool Equals(VotingMap other)
     {
@@ -35,9 +34,6 @@ public class VotingMap(
 
     [JsonProperty("difficulty")]
     public readonly DifficultyType Difficulty = difficulty;
-
-    [JsonProperty("categoryLabel")] 
-    public readonly string CategoryLabel = categoryLabel;
 
     [JsonProperty("category")] 
     public readonly Category MapCategory = category;
