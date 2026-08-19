@@ -23,7 +23,6 @@ public abstract class UserPacket : Packet
 
             packet = userPacketType switch
             {
-                UserPacketTypes.JoinRequest => JsonConvert.DeserializeObject<JoinRequestPacket>(json)!,
                 UserPacketTypes.MapSelection => JsonConvert.DeserializeObject<MapSelectionPacket>(json)!,
                 UserPacketTypes.ScoreSubmission => JsonConvert.DeserializeObject<ScoreSubmissionPacket>(json)!,
                 UserPacketTypes.DiscardMaps => JsonConvert.DeserializeObject<DiscardMapsPacket>(json)!,
@@ -41,7 +40,6 @@ public abstract class UserPacket : Packet
 
     public enum UserPacketTypes
     {
-        JoinRequest,
         MapSelection,
         ScoreSubmission,
         DiscardMaps
