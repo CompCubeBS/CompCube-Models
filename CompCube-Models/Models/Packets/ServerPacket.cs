@@ -11,7 +11,6 @@ public abstract class ServerPacket : Packet
     
     public enum ServerPacketTypes
     {
-        JoinResponse,
         MatchCreated,
         PlayerSelectedMap,
         RoundResults,
@@ -33,7 +32,6 @@ public abstract class ServerPacket : Packet
         
         return (userPacketType switch
         {
-            ServerPacketTypes.JoinResponse => JsonConvert.DeserializeObject<JoinResponsePacket>(data),
             ServerPacketTypes.MatchCreated => JsonConvert.DeserializeObject<MatchCreatedPacket>(data),
             ServerPacketTypes.RoundResults => JsonConvert.DeserializeObject<RoundResultsPacket>(data),
             ServerPacketTypes.PlayerSelectedMap => JsonConvert.DeserializeObject<PlayerSelectedMapPacket>(data),
