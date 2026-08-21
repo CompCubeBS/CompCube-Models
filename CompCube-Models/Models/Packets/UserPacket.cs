@@ -26,6 +26,7 @@ public abstract class UserPacket : Packet
                 UserPacketTypes.MapSelection => JsonConvert.DeserializeObject<MapSelectionPacket>(json)!,
                 UserPacketTypes.ScoreSubmission => JsonConvert.DeserializeObject<ScoreSubmissionPacket>(json)!,
                 UserPacketTypes.DiscardMaps => JsonConvert.DeserializeObject<DiscardMapsPacket>(json)!,
+                UserPacketTypes.ClientDisconnectPacket => JsonConvert.DeserializeObject<ClientDisconnectPacket>(json)!,
                 _ => throw new Exception("Could not get packet type!")
             };
 
