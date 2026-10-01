@@ -3,14 +3,11 @@
 namespace CompCube_Models.Models.ClientData;
 
 [method: JsonConstructor]
-public class Badge(string name, string colorCode, bool bold)
+public class Flair(string name, string colorCode)
 {
     [JsonProperty("badgeName")]
     public string Name { get; private set; } = name;
 
     [JsonProperty("badgeColor")]
     public string ColorCode { get; private set; } = colorCode;
-
-    [JsonProperty("badgeBold")]
-    public bool Bold { get; private set; } = bold;
 }

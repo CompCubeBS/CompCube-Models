@@ -3,35 +3,23 @@
 namespace CompCube_Models.Models.ClientData;
 
 [method: JsonConstructor]
-public class UserInfo(string username, string userId, int mmr, Badge? badge, long rank, string? discordId, bool banned, int wins, int totalGames, int winstreak, int highestWinstreak)
+public class UserInfo(string username, string platformId, string beatKhanaId, string avatarUrl, Flair? flair, bool banned)
 {
     [JsonProperty("username")]
     public string Username { get; private set; } = username;
 
-    [JsonProperty("userId")]
-    public string UserId { get; private set; } = userId;
+    [JsonProperty("platformId")]
+    public string PlatformId { get; private set; } = platformId;
+    
+    [JsonProperty("beatKhanaId")]
+    public string BeatKhanaId { get; private set; } = beatKhanaId;
 
-    // change to beatleader later
-    [JsonProperty("profilePictureLink")]
-    public string ProfilePictureLink { get; private set; } = "https://cdn.scoresaber.com/avatars/" + (userId.Length == 17 ? $"{userId}.jpg" : "oculus.png");
+    [JsonProperty("avatarUrl")]
+    public string AvatarUrl { get; private set; } = avatarUrl;
 
-    [JsonProperty("mmr")]
-    public int Mmr { get; private set; } = mmr;
-
-    [JsonProperty("badge")]
-    public Badge? Badge { get; private set; }= badge;
-
-    [JsonProperty("rank")]
-    public long Rank { get; private set; }= rank;
-
-    [JsonProperty("discordId")]
-    public string? DiscordId { get; private set; } = discordId;
+    [JsonProperty("flair")]
+    public Flair? Flair { get; private set; } = flair;
 
     [JsonProperty("banned")]
     public bool Banned { get; private set; } = banned;
-    
-    [JsonProperty("wins")] public int Wins { get; private set; } = wins;
-    [JsonProperty("losses")] public int TotalGames { get; private set; } = totalGames;
-    [JsonProperty("winstreak")] public int Winstreak { get; private set; } = winstreak;
-    [JsonProperty("highestWinstreak")] public int HighestWinstreak { get; private set; } = highestWinstreak;
 }
