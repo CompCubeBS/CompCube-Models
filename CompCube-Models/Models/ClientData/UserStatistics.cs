@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 namespace CompCube_Models.Models.ClientData;
 
 [method: JsonConstructor]
-public class UserStatistics(string userName, string platformId, string beatKhanaId, string avatarUrl, Flair? flair, bool banned, long rank, int elo, int wins, int totalGames, int winstreak, int highestWinstreak) : UserInfo(userName, platformId, beatKhanaId, avatarUrl, flair, banned)
+public class UserStatistics(string userName, string platformId, string? beatKhanaId, string avatarUrl, Flair? flair, bool banned, long rank, int elo, int wins, int totalGames, int winstreak, int highestWinstreak) : UserInfo(userName, platformId, beatKhanaId, avatarUrl, flair, banned)
 {
     [JsonProperty("elo")]
     public int Elo { get; private set; } = elo;
