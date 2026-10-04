@@ -3,7 +3,7 @@
 namespace CompCube_Models.Models.Map;
 
 [method: JsonConstructor]
-public class VotingMap(
+public class VotingMap(string guid,
     string hash,
     VotingMap.DifficultyType difficulty,
     VotingMap.Category category)
@@ -28,6 +28,9 @@ public class VotingMap(
             return (Hash.GetHashCode() * 397) ^ (int)Difficulty;
         }
     }
+
+    [JsonProperty("guid")] 
+    public readonly string Guid = guid;
 
     [JsonProperty("hash")]
     public readonly string Hash = hash;
