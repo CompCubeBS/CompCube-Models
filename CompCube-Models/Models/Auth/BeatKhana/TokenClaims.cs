@@ -4,8 +4,8 @@ namespace CompCube_Server.Models.CompCube_Models.Models.Auth.BeatKhana;
 
 [method: JsonConstructor]
 public class TokenClaims(
-    string guid, 
-    string id, 
+    string? guid, 
+    string? id, 
     string? discordId, 
     string username, 
     string? avatarUrl,
@@ -16,12 +16,12 @@ public class TokenClaims(
     string? tokenType,
     string[] scopes,
     string? scope,
-    int iat,
-    int exp,
-    int? nbf)
+    long? iat,
+    long? exp,
+    long? nbf)
 {
-    public readonly string Guid = guid;
-    public readonly string Id = id;
+    public readonly string? Guid = guid;
+    public readonly string? Id = id;
     public readonly string? DiscordId = discordId;
     public readonly string Username = username;
     public readonly string? AvatarUrl = avatarUrl;
@@ -33,7 +33,7 @@ public class TokenClaims(
     public readonly string? TokenType = tokenType;
     public readonly string[] Scopes = scopes;
     public readonly string? Scope = scope;
-    public readonly int Iat = iat;
+    public readonly long? Iat = iat;
     public readonly int Exp = exp;
     public readonly int? Nbf = nbf;
 }
