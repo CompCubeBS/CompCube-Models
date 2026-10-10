@@ -34,6 +34,6 @@ public class TokenClaims(
     public readonly string[] Scopes = scopes;
     public readonly string? Scope = scope;
     public readonly long? Iat = iat;
-    public readonly int Exp = exp;
-    public readonly int? Nbf = nbf;
+    public readonly long? Exp = exp;
+    public readonly long? Nbf = nbf;
 }
