@@ -6,7 +6,9 @@ namespace CompCube_Models.Models.Map;
 public class VotingMap(string guid,
     string hash,
     VotingMap.DifficultyType difficulty,
-    VotingMap.Category category)
+    VotingMap.Category category,
+    int maxScore,
+    int timeSeconds)
 {
     protected bool Equals(VotingMap other)
     {
@@ -40,6 +42,12 @@ public class VotingMap(string guid,
 
     [JsonProperty("category")] 
     public readonly Category MapCategory = category;
+    
+    [JsonProperty("maxScore")]
+    public readonly int MaxScore = maxScore;
+    
+    [JsonProperty("timeSeconds")]
+    public readonly int TimeSeconds = timeSeconds;
 
     public enum Category
     {
