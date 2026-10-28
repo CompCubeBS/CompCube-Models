@@ -40,6 +40,7 @@ public abstract class ServerPacket : Packet
             ServerPacketTypes.MatchFinished => JsonConvert.DeserializeObject<MatchFinishedPacket>(data),
             ServerPacketTypes.UpdateCards => JsonConvert.DeserializeObject<UpdateCardsPacket>(data),
             ServerPacketTypes.AbruptDisconnection => JsonConvert.DeserializeObject<AbruptDisconnectionPacket>(data),
+            ServerPacketTypes.PlayerDidRequestReplay => JsonConvert.DeserializeObject<PlayerDidRequestReplayPacket>(data),
             _ => throw new Exception("Could not get packet type!")
         })!;
     }
