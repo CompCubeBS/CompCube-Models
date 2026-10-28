@@ -17,7 +17,8 @@ public abstract class ServerPacket : Packet
         StartPickPhase,
         MatchFinished,
         UpdateCards,
-        AbruptDisconnection
+        AbruptDisconnection,
+        PlayerDidRequestReplay
     }
     
     public static ServerPacket Deserialize(string data)

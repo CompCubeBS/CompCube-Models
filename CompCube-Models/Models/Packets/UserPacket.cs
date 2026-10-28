@@ -44,6 +44,7 @@ public abstract class UserPacket : Packet
         MapSelection,
         ScoreSubmission,
         DiscardMaps,
-        ClientDisconnectPacket
+        ClientDisconnectPacket,
+        ReplayRequest
     }
 }
