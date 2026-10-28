@@ -1,4 +1,5 @@
 ﻿using CompCube_Models.Models.Packets.UserPackets;
+using CompCube_Server.Models.CompCube_Models.Models.Packets.UserPackets;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -27,6 +28,7 @@ public abstract class UserPacket : Packet
                 UserPacketTypes.ScoreSubmission => JsonConvert.DeserializeObject<ScoreSubmissionPacket>(json)!,
                 UserPacketTypes.DiscardMaps => JsonConvert.DeserializeObject<DiscardMapsPacket>(json)!,
                 UserPacketTypes.ClientDisconnectPacket => JsonConvert.DeserializeObject<ClientDisconnectPacket>(json)!,
+                UserPacketTypes.ReplayRequest => JsonConvert.DeserializeObject<ReplayRequestPacket>(json)!,
                 _ => throw new Exception("Could not get packet type!")
             };
 
