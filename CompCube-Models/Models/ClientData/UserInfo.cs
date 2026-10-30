@@ -3,7 +3,7 @@
 namespace CompCube_Models.Models.ClientData;
 
 [method: JsonConstructor]
-public class UserInfo(string username, string platformId, string? beatKhanaId, string avatarUrl, Flair? flair, bool banned)
+public class UserInfo(string username, string platformId, string? beatKhanaId, string avatarUrl, Flair[] flairs, bool banned)
 {
     [JsonProperty("username")]
     public string Username { get; private set; } = username;
@@ -18,7 +18,7 @@ public class UserInfo(string username, string platformId, string? beatKhanaId, s
     public string AvatarUrl { get; private set; } = avatarUrl;
 
     [JsonProperty("flair")]
-    public Flair? Flair { get; private set; } = flair;
+    public Flair[] Flairs { get; private set; } = flairs;
 
     [JsonProperty("banned")]
     public bool Banned { get; private set; } = banned;
