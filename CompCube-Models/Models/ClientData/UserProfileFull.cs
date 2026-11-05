@@ -10,9 +10,9 @@ public class UserProfileFull(
     string avatarUrl, 
     Flair[] flairs, 
     bool banned, 
-    DateTime lastPlayed, 
-    DateTime joinDate, 
-    DateTime lastUpdated,
+    DateTimeOffset? lastPlayed, 
+    DateTimeOffset joinDate, 
+    DateTimeOffset lastUpdated,
     CompetitiveInfo[] allCompetitiveData)
 {
     [JsonProperty("username")]
@@ -37,11 +37,11 @@ public class UserProfileFull(
     public CompetitiveInfo[] AllCompetitiveData { get; private set; } = allCompetitiveData;
 
     [JsonProperty("lastPlayed")]
-    public DateTime LastPlayed { get; private set; } = lastPlayed;
+    public DateTimeOffset? LastPlayed { get; private set; } = lastPlayed;
     
     [JsonProperty("lastUpdated")]
-    public DateTime LastUpdated { get; private set; } = lastUpdated;
+    public DateTimeOffset LastUpdated { get; private set; } = lastUpdated;
     
     [JsonProperty("joinDate")]
-    public DateTime JoinDate { get; private set; } = joinDate;
+    public DateTimeOffset JoinDate { get; private set; } = joinDate;
 }

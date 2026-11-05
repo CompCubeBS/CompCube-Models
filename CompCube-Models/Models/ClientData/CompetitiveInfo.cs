@@ -16,7 +16,7 @@ public class CompetitiveInfo(int season, int elo, int rank, int wins, int totalG
     [JsonProperty("wins")] 
     public int Wins { get; private set; } = wins;
     
-    [JsonProperty("losses")] 
+    [JsonProperty("totalGames")] 
     public int TotalGames { get; private set; } = totalGames;
     
     [JsonProperty("winstreak")] 

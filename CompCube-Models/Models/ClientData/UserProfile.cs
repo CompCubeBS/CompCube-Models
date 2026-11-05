@@ -3,13 +3,17 @@ using Newtonsoft.Json;
 namespace CompCube_Models.Models.ClientData;
 
 [method: JsonConstructor]
-public class UserStatistics(
+public class UserProfile(
+    string guid,
     string userName, 
     string platformId, 
     string avatarUrl, 
     Flair[] flairs, 
     CompetitiveInfo competitiveStats)
 {
+    [JsonProperty("guid")]
+    public string Guid { get; } = guid;
+    
     [JsonProperty("userName")]
     public string UserName { get; } = userName;
     
