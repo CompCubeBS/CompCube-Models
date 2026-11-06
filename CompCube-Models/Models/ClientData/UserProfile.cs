@@ -8,6 +8,7 @@ public class UserProfile(
     string userName, 
     string platformId, 
     string avatarUrl, 
+    bool banned,
     Flair[] flairs, 
     CompetitiveInfo competitiveStats)
 {
@@ -16,6 +17,9 @@ public class UserProfile(
     
     [JsonProperty("userName")]
     public string UserName { get; } = userName;
+    
+    [JsonProperty("banned")]
+    public bool Banned { get; } = banned;
     
     [JsonProperty("platformId")]
     public string PlatformId { get; } = platformId;
