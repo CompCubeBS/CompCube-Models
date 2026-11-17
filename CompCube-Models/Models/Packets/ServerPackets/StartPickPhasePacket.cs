@@ -4,12 +4,12 @@ using Newtonsoft.Json;
 namespace CompCube_Models.Models.Packets.ServerPackets;
 
 [method: JsonConstructor]
-public class StartPickPhasePacket(BeatmapData[] availableMaps, bool isOwnPick, float multiplier, float redHealth, float blueHealth) : ServerPacket
+public class StartPickPhasePacket(CCBeatmapData[] availableMaps, bool isOwnPick, float multiplier, float redHealth, float blueHealth) : ServerPacket
 {
     public override ServerPacketTypes PacketType => ServerPacketTypes.StartPickPhase;
 
     [JsonProperty("availablePicks")]
-    public readonly BeatmapData[] AvailableMaps = availableMaps;
+    public readonly CCBeatmapData[] AvailableMaps = availableMaps;
 
     [JsonProperty("isOwnPick")]
     public readonly bool IsOwnPick = isOwnPick;

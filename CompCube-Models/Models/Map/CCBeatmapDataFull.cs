@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 namespace CompCube_Models.Models.Map;
 
 [method: JsonConstructor]
-public class BeatmapDataFull(string? songTitle, string? songArtist, string? mapper, string? coverUrl, string guid, string hash, BeatmapData.DifficultyType difficulty, BeatmapData.Category category, int maxScore, int timeSeconds) : BeatmapData(guid, hash, difficulty, category, maxScore, timeSeconds)
+public class CCBeatmapDataFull(string? songTitle, string? songArtist, string? mapper, string? coverUrl, string guid, string hash, CCBeatmapData.DifficultyType difficulty, CCBeatmapData.Category category, int maxScore, int timeSeconds) : CCBeatmapData(guid, hash, difficulty, category, maxScore, timeSeconds)
 {
     [JsonProperty("songTitle")]
     public readonly string? SongTitle = songTitle;

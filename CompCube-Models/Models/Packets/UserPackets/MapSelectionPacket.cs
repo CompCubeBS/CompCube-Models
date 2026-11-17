@@ -4,10 +4,10 @@ using Newtonsoft.Json;
 namespace CompCube_Models.Models.Packets.UserPackets;
 
 [method: JsonConstructor]
-public class MapSelectionPacket(BeatmapData map) : UserPacket
+public class MapSelectionPacket(CCBeatmapData map) : UserPacket
 {
     public override UserPacketTypes PacketType => UserPacketTypes.MapSelection;
 
     [JsonProperty("map")]
-    public readonly BeatmapData Selection = map;
+    public readonly CCBeatmapData Selection = map;
 }

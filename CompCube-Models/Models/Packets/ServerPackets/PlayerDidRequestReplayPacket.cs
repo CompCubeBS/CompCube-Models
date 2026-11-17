@@ -5,10 +5,10 @@ using Newtonsoft.Json;
 namespace CompCube_Models.Models.Packets.ServerPackets;
 
 [method: JsonConstructor]
-public class PlayerDidRequestReplayPacket(BeatmapData mapToReplay, UserProfile requester) : ServerPacket
+public class PlayerDidRequestReplayPacket(CCBeatmapData mapToReplay, UserProfile requester) : ServerPacket
 {
     [JsonProperty("mapToReplay")]
-    public readonly BeatmapData? MapToReplay = mapToReplay;
+    public readonly CCBeatmapData? MapToReplay = mapToReplay;
     
     [JsonProperty("requester")]
     public readonly UserProfile Requester = requester;
