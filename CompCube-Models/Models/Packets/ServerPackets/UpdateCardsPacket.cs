@@ -2,9 +2,9 @@
 
 namespace CompCube_Models.Models.Packets.ServerPackets;
 
-public class UpdateCardsPacket(VotingMap[] maps) : ServerPacket
+public class UpdateCardsPacket(BeatmapData[] maps) : ServerPacket
 {
     public override ServerPacketTypes PacketType => ServerPacketTypes.UpdateCards;
     
-    public readonly VotingMap[] Maps = maps;
+    public readonly BeatmapData[] Maps = maps;
 }

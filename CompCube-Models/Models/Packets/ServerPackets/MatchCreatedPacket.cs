@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 namespace CompCube_Models.Models.Packets.ServerPackets;
 
 [method: JsonConstructor]
-public class MatchCreatedPacket(UserProfile red, UserProfile blue, VotingMap[] initialMaps) : ServerPacket
+public class MatchCreatedPacket(UserProfile red, UserProfile blue, BeatmapData[] initialMaps) : ServerPacket
 {
     public override ServerPacketTypes PacketType => ServerPacketTypes.MatchCreated;
 
@@ -16,5 +16,5 @@ public class MatchCreatedPacket(UserProfile red, UserProfile blue, VotingMap[] i
     public readonly UserProfile Blue = blue;
     
     [JsonProperty("initialMaps")]
-    public readonly VotingMap[] InitialMaps = initialMaps;
+    public readonly BeatmapData[] InitialMaps = initialMaps;
 }

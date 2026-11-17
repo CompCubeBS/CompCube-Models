@@ -3,14 +3,14 @@
 namespace CompCube_Models.Models.Map;
 
 [method: JsonConstructor]
-public class VotingMap(string guid,
+public class BeatmapData(string guid,
     string hash,
-    VotingMap.DifficultyType difficulty,
-    VotingMap.Category category,
+    BeatmapData.DifficultyType difficulty,
+    BeatmapData.Category category,
     int maxScore,
     int timeSeconds)
 {
-    protected bool Equals(VotingMap other)
+    protected bool Equals(BeatmapData other)
     {
         return Hash == other.Hash && Difficulty == other.Difficulty;
     }
@@ -20,7 +20,7 @@ public class VotingMap(string guid,
         if (obj is null) return false;
         if (ReferenceEquals(this, obj)) return true;
         if (obj.GetType() != GetType()) return false;
-        return Equals((VotingMap)obj);
+        return Equals((BeatmapData)obj);
     }
 
     public override int GetHashCode()
@@ -68,10 +68,10 @@ public class VotingMap(string guid,
         ExpertPlus
     }
 
-    public static bool operator ==(VotingMap a, VotingMap b)
+    public static bool operator ==(BeatmapData a, BeatmapData b)
     {
         return a.Hash == b.Hash && a.Difficulty == b.Difficulty;
     }
 
-    public static bool operator !=(VotingMap a, VotingMap b) => !(a == b);
+    public static bool operator !=(BeatmapData a, BeatmapData b) => !(a == b);
 }
