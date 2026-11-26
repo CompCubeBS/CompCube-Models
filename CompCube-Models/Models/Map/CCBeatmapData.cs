@@ -19,7 +19,7 @@ public class CCBeatmapData(string guid,
     {
         if (obj is null) return false;
         if (ReferenceEquals(this, obj)) return true;
-        if (obj.GetType() != GetType()) return false;
+        if (obj is not (CCBeatmapData or CCBeatmapDataFull)) return false;
         return Equals((CCBeatmapData)obj);
     }
 
